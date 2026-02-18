@@ -3,7 +3,7 @@
 # Run the command passed to the entrypoint
 if [ $# -gt 0 ]; then
     echo -e "\nCompiling with command: $@"
-    sh -c "$@"
+    exec "$@"
 else
     echo -e "\nNo command provided. You must provide a command to compile with pawncc. For example:\n"
     echo -e "pawncc gamemode.pwn '-D.' '-O2' '-;+' '-(+' '-d3' '-i../include'"

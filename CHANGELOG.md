@@ -27,10 +27,18 @@ Types of changes:
 
 - [Changelog](#changelog)
   - [Table of Contents](#table-of-contents)
+  - [\[2.1\] - 2026-02-18](#21---2026-02-18)
+    - [Fixed in 2.1](#fixed-in-21)
   - [\[2.0\] - 2025-06-15](#20---2025-06-15)
     - [Added in 2.0](#added-in-20)
   - [\[1.0\] - 2025-06-15](#10---2025-06-15)
     - [Added in 1.0](#added-in-10)
+
+## [2.1] - 2026-02-18
+
+### Fixed in 2.1
+
+- Changed `sh -c` to `exec` in entrypoints to allow proper signal handling and arguments passing.
 
 ## [2.0] - 2025-06-15
 
