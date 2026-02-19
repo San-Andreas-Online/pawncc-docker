@@ -52,7 +52,7 @@ git clone https://github.com/MichaelAceAnderson/pawncc-docker.git
 To build the image locally, you can run the following command in the right folder (according to your version) of the project:
 
 ```bash
-docker build . -t pawncc:latest
+docker build . -t pawncc:latest-linux
 ```
 
 ### Usage
@@ -60,7 +60,7 @@ docker build . -t pawncc:latest
 To use the image, you can run the following command:  
 
 ```bash
-docker run -e pawncc:latest
+docker run -e pawncc:latest-linux
 
 ```
 

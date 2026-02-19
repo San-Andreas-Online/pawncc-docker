@@ -1,41 +1,41 @@
 {
 	"configurations": [
 		{
-			"name": "Run 3.10.10 image",
-			"cwd": "${workspaceFolder}/3.10.10",
+			"name": "Run 3.10.10-linux image",
+			"cwd": "${workspaceFolder}/3.10.10-linux",
 			"request": "launch",
 			"type": "node-terminal",
 			"windows": {
-				"command": "wsl docker run michaelace/pawncc:3.10.10",
+				"command": "wsl docker run michaelace/pawncc:3.10.10-linux",
 			},
 			"linux": {
-				"command": "docker run michaelace/pawncc:3.10.10",
+				"command": "docker run michaelace/pawncc:3.10.10-linux",
 			},
 			"command": "exit"
 		},
 		{
-			"name": "Run 3.10.11 image",
-			"cwd": "${workspaceFolder}/3.10.11",
+			"name": "Run 3.10.11-linux image",
+			"cwd": "${workspaceFolder}/3.10.11-linux",
 			"request": "launch",
 			"type": "node-terminal",
 			"windows": {
-				"command": "wsl docker run michaelace/pawncc:3.10.11",
+				"command": "wsl docker run michaelace/pawncc:3.10.11-linux",
 			},
 			"linux": {
-				"command": "docker run michaelace/pawncc:3.10.11",
+				"command": "docker run michaelace/pawncc:3.10.11-linux",
 			},
 			"command": "exit"
 		},
 		{
-			"name": "Run latest image",
-			"cwd": "${workspaceFolder}/latest",
+			"name": "Run latest-linux image",
+			"cwd": "${workspaceFolder}/latest-linux",
 			"request": "launch",
 			"type": "node-terminal",
 			"windows" : {
-				"command": "wsl docker run michaelace/open.mp:latest",
+				"command": "wsl docker run michaelace/pawncc:latest-linux",
 			},
 			"linux" : {
-				"command": "docker run michaelace/open.mp:latest",
+				"command": "docker run michaelace/pawncc:latest-linux",
 			},
 			"command": "exit"
 		}
