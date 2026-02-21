@@ -3,7 +3,7 @@
     "tasks":
     [
       {
-        "label": "build pawncc-latest-linux",
+        "label": "Build pawncc-latest-linux",
         "type": "shell",
         "windows": {
           "command": "wsl sh -c 'docker buildx build --platform linux/amd64  . -t pawncc:latest-linux && docker tag pawncc:latest-linux michaelace/pawncc:latest-linux'",
@@ -26,7 +26,7 @@
         }
       },
       {
-        "label": "build pawncc-3.10.10-linux",
+        "label": "Build pawncc-3.10.10-linux",
         "type": "shell",
         "options": {
           "cwd": "${workspaceFolder}/3.10.10-linux"
@@ -49,7 +49,7 @@
         }
       },
       {
-        "label": "build pawncc-3.10.11-linux",
+        "label": "Build pawncc-3.10.11-linux",
         "type": "shell",
         "options": {
           "cwd": "${workspaceFolder}/3.10.11-linux"
@@ -72,7 +72,30 @@
         }
       },
       {
-        "label": "push pawncc-latest-linux",
+        "label": "Build pawncc-3.10.11-windows (Docker Desktop on Windows only)",
+        "type": "shell",
+        "options": {
+          "cwd": "${workspaceFolder}/3.10.11-windows"
+        },
+        "windows": {
+          "command": "wsl sh -c 'docker build . -t pawncc:3.10.11-windows && docker tag pawncc:3.10.11-windows michaelace/pawncc:3.10.11-windows'",
+        },
+        "linux": {
+          "command": "docker build . -t pawncc:3.10.11-windows && docker tag pawncc:3.10.11-windows michaelace/pawncc:3.10.11-windows",
+        },
+        "command": "",
+        "group": {
+          "kind": "build",
+          "isDefault": false
+        },
+        "isBackground": false,
+        "presentation": {
+          "reveal": "always",
+          "panel": "dedicated"
+        }
+      },
+      {
+        "label": "Push pawncc-latest-linux",
         "type": "shell",
         "options": {
           "cwd": "${workspaceFolder}/latest-linux"
@@ -91,7 +114,7 @@
         }
       },
       {
-        "label": "push pawncc-3.10.10-linux",
+        "label": "Push pawncc-3.10.10-linux",
         "type": "shell",
         "options": {
           "cwd": "${workspaceFolder}/3.10.10-linux"
@@ -110,7 +133,7 @@
         }
       },
       {
-        "label": "push pawncc-3.10.11-linux",
+        "label": "Push pawncc-3.10.11-linux",
         "type": "shell",
         "options": {
           "cwd": "${workspaceFolder}/3.10.11-linux"
@@ -120,6 +143,25 @@
         },
         "linux": {
           "command": "docker push michaelace/pawncc:3.10.11-linux",
+        },
+        "command": "",
+        "isBackground": false,
+        "presentation": {
+          "reveal": "always",
+          "panel": "dedicated"
+        }
+      },
+      {
+        "label": "Push pawncc-3.10.11-windows",
+        "type": "shell",
+        "options": {
+          "cwd": "${workspaceFolder}/3.10.11-windows"
+        },
+        "windows": {
+          "command": "wsl docker push michaelace/pawncc:3.10.11-windows",
+        },
+        "linux": {
+          "command": "docker push michaelace/pawncc:3.10.11-windows",
         },
         "command": "",
         "isBackground": false,
