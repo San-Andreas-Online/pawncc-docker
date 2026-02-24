@@ -27,12 +27,20 @@ Types of changes:
 
 - [Changelog](#changelog)
   - [Table of Contents](#table-of-contents)
+  - [\[3.0\] - 2026-02-21](#30---2026-02-21)
+    - [Added in 3.0](#added-in-30)
   - [\[2.1\] - 2026-02-18](#21---2026-02-18)
     - [Fixed in 2.1](#fixed-in-21)
   - [\[2.0\] - 2025-06-15](#20---2025-06-15)
     - [Added in 2.0](#added-in-20)
   - [\[1.0\] - 2025-06-15](#10---2025-06-15)
     - [Added in 1.0](#added-in-10)
+
+## [3.0] - 2026-02-21
+
+### Added in 3.0
+
+- Added image for Pawn Community Compiler 3.10.11 (latest release by open.mp team) for Windows.
 
 ## [2.1] - 2026-02-18
 

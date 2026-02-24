@@ -38,6 +38,19 @@
 				"command": "docker run michaelace/pawncc:latest-linux",
 			},
 			"command": "exit"
-		}
+		},
+		{
+			"name": "Run 3.10.11-windows image (Docker Desktop on Windows only)",
+			"cwd": "${workspaceFolder}/3.10.11-windows",
+			"request": "launch",
+			"type": "node-terminal",
+			"windows": {
+				"command": "docker run michaelace/pawncc:3.10.11-windows",
+			},
+			"linux": {
+				"command": "docker run michaelace/pawncc:3.10.11-windows",
+			},
+			"command": "exit"
+		},
 	]
 }
