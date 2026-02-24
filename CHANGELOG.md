@@ -27,6 +27,8 @@ Types of changes:
 
 - [Changelog](#changelog)
   - [Table of Contents](#table-of-contents)
+  - [\[4.0\] - 2026-02-24](#40---2026-02-24)
+    - [Added in 4.0](#added-in-40)
   - [\[3.0\] - 2026-02-21](#30---2026-02-21)
     - [Added in 3.0](#added-in-30)
   - [\[2.1\] - 2026-02-18](#21---2026-02-18)
@@ -36,11 +38,17 @@ Types of changes:
   - [\[1.0\] - 2025-06-15](#10---2025-06-15)
     - [Added in 1.0](#added-in-10)
 
+## [4.0] - 2026-02-24
+
+### Added in 4.0
+
+- Added Windows image for Pawn Community Compiler 3.10.10 (latest official release).
+
 ## [3.0] - 2026-02-21
 
 ### Added in 3.0
 
-- Added image for Pawn Community Compiler 3.10.11 (latest release by open.mp team) for Windows.
+- Added Windows image for Pawn Community Compiler 3.10.11 (latest release by open.mp team).
 
 ## [2.1] - 2026-02-18
 
@@ -52,10 +60,10 @@ Types of changes:
 
 ### Added in 2.0
 
-- Added image for Pawn Community Compiler 3.10.11 (latest release by open.mp team).
+- Added Linux image for Pawn Community Compiler 3.10.11 (latest release by open.mp team).
 
 ## [1.0] - 2025-06-15
 
 ### Added in 1.0
 
-- Added image for Pawn Community Compiler 3.10.10 (latest official release).
+- Added Linux image for Pawn Community Compiler 3.10.10 (latest official release).
