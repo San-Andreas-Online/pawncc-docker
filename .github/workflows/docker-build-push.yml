@@ -6,15 +6,12 @@ on:
   workflow_dispatch: {}
 
 jobs:
-  build:
-    if: github.ref == 'refs/heads/main'
+  build-linux:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
         include:
-          - folder: latest-linux
-            tag: latest-linux
           - folder: 3.10.10-linux
             tag: 3.10.10-linux
           - folder: 3.10.11-linux
@@ -29,7 +26,7 @@ jobs:
       - name: Set up buildx
         uses: docker/setup-buildx-action@v2
 
-      - name: Build image and save as docker-archive tar
+      - name: Build Linux image and save as docker-archive tar
         uses: docker/build-push-action@v5
         with:
           context: ${{ matrix.folder }}
@@ -41,33 +38,30 @@ jobs:
           build-args: |
             BUILDKIT_INLINE_CACHE=1
 
-      - name: Upload built image artifact
+      - name: Upload built Linux image artifact
         uses: actions/upload-artifact@v4
         with:
           name: pawncc-docker-${{ matrix.tag }}.tar
           path: pawncc-docker-${{ matrix.tag }}.tar
-  push:
-    needs: build
-    if: github.ref == 'refs/heads/main'
+  push-linux:
+    needs: build-linux
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
         include:
-          - folder: latest-linux
-            tag: latest-linux
           - folder: 3.10.10-linux
             tag: 3.10.10-linux
           - folder: 3.10.11-linux
             tag: 3.10.11-linux
     steps:
-      - name: Download built image artifact
+      - name: Download built Linux image artifact
         uses: actions/download-artifact@v4
         with:
           name: pawncc-docker-${{ matrix.tag }}.tar
           path: .
 
-      - name: Load image
+      - name: Load Linux image
         run: docker load -i pawncc-docker-${{ matrix.tag }}.tar
 
       - name: Login to Docker Hub
@@ -76,7 +70,7 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Push image tags
+      - name: Push Linux image tags
         run: docker push michaelace/pawncc:${{ matrix.tag }}
 
   build-windows:
@@ -96,7 +90,7 @@ jobs:
       - name: Build Windows images (native docker)
         run: docker build ${{ matrix.folder }} -f ${{ matrix.folder }}/Dockerfile -t michaelace/pawncc:${{ matrix.tag }}
 
-      - name: Save images to tar
+      - name: Save Windows images to tar
         run: docker save -o pawncc-docker-${{ matrix.tag }}.tar michaelace/pawncc:${{ matrix.tag }}
 
       - name: Upload built Windows image artifacts
@@ -107,7 +101,6 @@ jobs:
 
   push-windows:
     needs: build-windows
-    if: startsWith(github.ref, 'refs/heads/feat/windows')
     runs-on: windows-latest
     strategy:
       fail-fast: false
