@@ -12,6 +12,15 @@
 
 This is a basic Docker image for running the Pawn Community Compiler (PawnCC). You can find the built image on the [Docker Hub](https://hub.docker.com/r/michaelace/pawncc) with all the instructions required to run it.
 
+<div align="center">
+
+If you like this project, consider supporting us!
+
+[![PayPal](https://img.shields.io/badge/paypal-One%20Time%20Donation-003087?style=flat&logo=paypal)](https://paypal.me/MichaelAceAnderson)
+[![Patreon](https://img.shields.io/badge/patreon-Subscription-FF424D?style=flat&logo=patreon)](https://www.patreon.com/posts/san-andreas-open-153811828)
+
+</div>
+
 ![PawnCC](https://avatars.githubusercontent.com/u/35569887)
 
 ## Changelog
